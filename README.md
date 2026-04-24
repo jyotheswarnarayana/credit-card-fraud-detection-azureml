@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Credit Card Fraud Detection with Azure ML
 
 ## Team Members
@@ -124,3 +125,7 @@ Open fraud_detection_analysis.ipynb and click Kernel then Restart and Run All
 
 ## Results Summary
 The Random Forest model with SMOTE preprocessing achieved the best performance with precision of 0.4300 and recall of 0.8776, successfully catching 86 out of 98 fraud transactions in the test set. The high recall score demonstrates the model's strong ability to detect fraudulent transactions which is the primary goal in fraud detection systems.
+=======
+# credit-card-fraud-detection
+Real-Time Credit Card Fraud Detection using Azure ML
+>>>>>>> 8ab86f14142f19ff949aa0148d7371b536c0464e
