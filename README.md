@@ -96,6 +96,7 @@ Random Forest with SMOTE preprocessing achieved the highest AUC of 0.9828
 ### Step 1 - Clone the repo
 
 git clone https://github.com/jyotheswarnarayana/credit-card-fraud-detection-azureml.git
+
 cd credit-card-fraud-detection-azureml
 
 ### Step 2 - Install dependencies
