@@ -1,0 +1,4 @@
+# Copy this file to config.yml and fill in your values
+subscription_id: "c5dcc149-c2d5-4cd8-987a-5c89844f1856"
+resource_group: "fraud-detection-project"
+workspace_name: "fraud-detection-ws"

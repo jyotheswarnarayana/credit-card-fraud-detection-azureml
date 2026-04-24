@@ -1,0 +1,17 @@
+# Azure credentials
+config.yml
+
+# Dataset
+data/creditcard.csv
+mltable-data/creditcard.csv
+*.csv
+
+# Mac files
+.DS_Store
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+

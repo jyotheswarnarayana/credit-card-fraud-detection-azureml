@@ -1,0 +1,12 @@
+# Azure credentials 
+config.yml
+
+# Dataset 
+data/
+*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+.env
+
