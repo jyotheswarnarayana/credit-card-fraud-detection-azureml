@@ -5,7 +5,12 @@
 - Mohith Reddy Kovvuri
 - Vaishnavi Madduri
 
-## Wright State University
+## Wright State University 
+
+---
+
+## View Notebook
+https://nbviewer.org/github/jyotheswarnarayana/credit-card-fraud-detection-azureml/blob/main/fraud_detection_analysis.ipynb
 
 ---
 
@@ -39,10 +44,10 @@ This project builds a credit card fraud detection system using the Kaggle Credit
 
 | Model | AUC | Precision | Recall | F1 |
 |-------|-----|-----------|--------|-----|
-| Logistic Regression | 0.9698 | 0.0581 | 0.9184 | 0.1094 |
-| Random Forest | 0.9828 | 0.4300 | 0.8776 | 0.5772 |
-| XGBoost | 0.9760 | 0.3455 | 0.8673 | 0.4942 |
-| Gradient Boosting | 0.9691 | 0.2772 | 0.8571 | 0.4190 |
+| Logistic Regression | 0.9722 | 0.0609 | 0.9184 | 0.1141 |
+| Random Forest | 0.9733 | 0.8100 | 0.8265 | 0.8182 |
+| XGBoost | 0.9747 | 0.7810 | 0.8367 | 0.8079 |
+| Gradient Boosting | 0.7418 | 0.7975 | 0.6429 | 0.7119 |
 
 ---
 
@@ -59,18 +64,18 @@ This project builds a credit card fraud detection system using the Kaggle Credit
 ---
 
 ## Best Model
-Random Forest with SMOTE preprocessing achieved the highest AUC of 0.9828
-- Caught 86 out of 98 fraud transactions
-- Precision: 0.4300
-- Recall: 0.8776
-- F1 Score: 0.5772
+XGBoost achieved the highest AUC of 0.9747
+- Caught 82 out of 98 fraud transactions
+- Precision: 0.7810
+- Recall: 0.8367
+- F1 Score: 0.8079
 
 ---
 
 ## Azure ML Integration
 - Workspace: fraud-detection-ws
 - Resource group: fraud-detection-project
-- Dataset registered: creditcard-fraud and creditcard-fraud-table
+- Dataset registered: creditcard-fraud
 - Experiments tracked using MLflow
 - AutoML job: fraud-automl-final - Completed
 
@@ -78,17 +83,18 @@ Random Forest with SMOTE preprocessing achieved the highest AUC of 0.9828
 
 ## Key Findings
 1. Dataset is highly imbalanced - only 0.17% fraud
-2. SMOTE oversampling significantly improved model performance
+2. XGBoost achieved best AUC of 0.9747
 3. V14 is the most important fraud indicator feature
 4. Fraud transactions average 122 dollars vs 88 dollars for legitimate
-5. Our Random Forest with SMOTE outperformed Azure AutoML VotingEnsemble
-6. High recall of 0.8776 is most important - catching fraud matters more than false alarms
+5. class_weight=balanced used to handle class imbalance
+6. Our XGBoost outperformed Azure AutoML VotingEnsemble
 
 ---
 
 ## How to Run This Project
 
 ### Prerequisites
+
 - Python 3.13+
 - Azure account with ML workspace
 - Kaggle account to download dataset
@@ -100,30 +106,30 @@ git clone https://github.com/jyotheswarnarayana/credit-card-fraud-detection-azur
 cd credit-card-fraud-detection-azureml
 
 ### Step 2 - Install dependencies
+
 pip install -r requirements.txt
 
 ### Step 3 - Download dataset
+
 - Go to Kaggle Credit Card Fraud Detection dataset
 - Download creditcard.csv
 - Place it in the data/ folder
 
 ### Step 4 - Configure Azure ML
-cp config.yml.example config.yml 
-Fill in Azure credentials in config.yml
-If you want our credintials to review we are ready to give
+
+cp config.yml.example config.yml
 
 ### Step 5 - Login to Azure
+
 az login
 
 ### Step 6 - Upload dataset to Azure ML
+
 python 1_upload_data.py
 
 ### Step 7 - Run the notebook
-python3 -m jupyter notebook
 
 Open fraud_detection_analysis.ipynb and click Kernel then Restart and Run All
 
----
-
 ## Results Summary
-The Random Forest model with SMOTE preprocessing achieved the best performance with precision of 0.4300 and recall of 0.8776, successfully catching 86 out of 98 fraud transactions in the test set. The high recall score demonstrates the model's strong ability to detect fraudulent transactions which is the primary goal in fraud detection systems.
+XGBoost achieved the best AUC of 0.9747, successfully catching 82 out of 98 fraud transactions in the test set with precision of 0.7810 and recall of 0.8367. The high AUC score demonstrates the model's strong ability to distinguish between fraudulent and legitimate transactions.
