@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Credit Card Fraud Detection with Azure ML
 
 ## Team Members
@@ -6,7 +5,7 @@
 - Mohith Reddy Kovvuri
 - Vaishnavi Madduri
 
-## Wright State University | Data Analytics Final Project
+## Wright State University
 
 ---
 
@@ -25,15 +24,14 @@ This project builds a credit card fraud detection system using the Kaggle Credit
 ---
 
 ## Project Structure
-fraud-detection-azureml/
-- fraud_detection_analysis.ipynb  - Main notebook
-- 1_upload_data.py                - Upload dataset to Azure
-- 2_automl_train.py               - Azure AutoML training
-- 3_eda_and_results.py            - EDA scripts
-- config.yml.example              - Azure config template
-- requirements.txt                - Python dependencies
-- data/                           - Dataset folder
-- outputs/                        - Generated charts
+- fraud_detection_analysis.ipynb - Main notebook
+- 1_upload_data.py - Upload dataset to Azure
+- 2_automl_train.py - Azure AutoML training
+- 3_eda_and_results.py - EDA scripts
+- config.yml.example - Azure config template
+- requirements.txt - Python dependencies
+- data/ - Dataset folder
+- outputs/ - Generated charts
 
 ---
 
@@ -96,7 +94,9 @@ Random Forest with SMOTE preprocessing achieved the highest AUC of 0.9828
 - Kaggle account to download dataset
 
 ### Step 1 - Clone the repo
+
 git clone https://github.com/jyotheswarnarayana/credit-card-fraud-detection-azureml.git
+
 cd credit-card-fraud-detection-azureml
 
 ### Step 2 - Install dependencies
@@ -108,8 +108,9 @@ pip install -r requirements.txt
 - Place it in the data/ folder
 
 ### Step 4 - Configure Azure ML
-cp config.yml.example config.yml
-Fill in your Azure credentials in config.yml
+cp config.yml.example config.yml 
+Fill in Azure credentials in config.yml
+If you want our credintials to review we are ready to give
 
 ### Step 5 - Login to Azure
 az login
@@ -119,13 +120,10 @@ python 1_upload_data.py
 
 ### Step 7 - Run the notebook
 python3 -m jupyter notebook
+
 Open fraud_detection_analysis.ipynb and click Kernel then Restart and Run All
 
 ---
 
 ## Results Summary
 The Random Forest model with SMOTE preprocessing achieved the best performance with precision of 0.4300 and recall of 0.8776, successfully catching 86 out of 98 fraud transactions in the test set. The high recall score demonstrates the model's strong ability to detect fraudulent transactions which is the primary goal in fraud detection systems.
-=======
-# credit-card-fraud-detection
-Real-Time Credit Card Fraud Detection using Azure ML
->>>>>>> 8ab86f14142f19ff949aa0148d7371b536c0464e
