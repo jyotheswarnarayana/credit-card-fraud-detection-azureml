@@ -41,9 +41,7 @@ This project builds a credit card fraud detection system using the Kaggle Credit
 ---
 ## Project Architecture
 
-[Architecture Diagram](outputs/architecture.png)
-
-The architecture shows two parallel pipelines:
+The architecture we designed with two parallel pipelines:
 - Local pipeline: EDA → Local Model Training → Results → Best Model Selected
 - Azure ML pipeline: Dataset Registration → AutoML Training → Best Model → MLflow Tracking
 - Both pipelines merge into final Model Comparison and Analysis
